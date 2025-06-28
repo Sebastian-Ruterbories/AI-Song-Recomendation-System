@@ -18,3 +18,28 @@ Notes:
     • score_and_rename.py – CLI: python score_and_rename.py /path/to/folder [--copy-dir outdir]
     • requirements.txt or environment.yml
     • kick_hardness_report.md – data, features, model, evaluation
+
+
+
+AI Sample Process: 
+# Example usage and function calls:
+
+# 1. Create analyzer instance
+# analyzer = KickHardnessAnalyzer("models/kick_hardness_model.pkl")
+
+# 2. Analyze a single file
+# score = analyzer.analyze_file("path/to/song.wav")
+# print(f"Kick hardness score: {score}")
+
+# 3. CLI usage examples:
+# python src/cli.py song1.wav song2.mp3 song3.flac
+# python src/cli.py /path/to/music/folder --recursive --copy --output-dir /path/to/output
+# python src/cli.py *.wav --model models/custom_model.pkl
+
+# 4. Extract features directly (for training/debugging)
+# audio_data, sr = librosa.load("song.wav", sr=22050)
+# features = analyzer.extract_features(audio_data, sr)
+# print(f"Feature vector shape: {features.shape}")
+
+# 5. Train your own model (run once to create initial model)
+# python train_model.py
